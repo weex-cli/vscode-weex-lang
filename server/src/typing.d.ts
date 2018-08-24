@@ -21,6 +21,6 @@ declare module 'eslint' {
   }
 }
 
-declare module 'eslint-plugin-vue';
+declare module 'eslint-plugin-weex';
 declare module 'parse-gitignore';
 declare module '*.json';
