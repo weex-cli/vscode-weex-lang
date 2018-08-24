@@ -73,8 +73,8 @@ export function getLanguageModes(workspacePath: string | null | undefined): Lang
 
   const jsMode = getJavascriptMode(documentRegions, workspacePath);
   let modes: { [k: string]: LanguageMode } = {
-    vue: getVueMode(),
-    'vue-html': getVueHTMLMode(documentRegions, workspacePath, jsMode),
+    weex: getVueMode(),
+    'weex-html': getVueHTMLMode(documentRegions, workspacePath, jsMode),
     css: getCSSMode(documentRegions),
     postcss: getPostCSSMode(documentRegions),
     scss: getSCSSMode(documentRegions),

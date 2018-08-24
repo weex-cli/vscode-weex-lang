@@ -56,6 +56,7 @@ function getStyleMode(
       config = c;
     },
     doValidation(document) {
+      console.log('languageId', languageId);
       if (languageId === 'postcss') {
         return [];
       } else {
@@ -119,12 +120,12 @@ function getStyleMode(
       return languageService.getColorPresentations(embedded, stylesheets.get(embedded), color, range);
     },
     format(document, currRange, formattingOptions) {
-      if (config.vetur.format.defaultFormatter[languageId] === 'none') {
+      if (config.weexLang.format.defaultFormatter[languageId] === 'none') {
         return [];
       }
 
       const { value, range } = getValueAndRange(document, currRange);
-      const needIndent = config.vetur.format.styleInitialIndent;
+      const needIndent = config.weexLang.format.styleInitialIndent;
       const parserMap: { [k: string]: ParserOption } = {
         css: 'css',
         postcss: 'css',

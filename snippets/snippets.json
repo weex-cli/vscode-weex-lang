@@ -1,0 +1,125 @@
+{
+  "a": {
+    "prefix": "a",
+    "body": "<a href=\"$1\">$2</a>",
+    "description": "Weex Components"
+  },
+  "div": {
+    "prefix": "div",
+    "body": "<div>$1</div>",
+    "description": "Weex Components"
+  },
+  "image": {
+    "prefix": "image",
+    "body": "<image src=\"$1\" style=\"width:500px;height:500px\">$2</image>",
+    "description": "Weex Components"
+  },
+  "indicator": {
+    "prefix": "indicator",
+    "body": "<indicator>$1</indicator>",
+    "description": "Weex Components"
+  },
+  "input": {
+    "prefix": "input",
+    "body": [
+      "<input",
+      "   type=\"$1\"",
+      "   autofocus=\"$2\"",
+      "   placeholder=\"$3\"",
+      "   value=\"$4\">",
+      "</input>"
+    ],
+    "description": "Weex Components"
+  },
+  "list": {
+    "prefix": "list",
+    "body": ["<list>", "   <cell>$2</cell>", "</list>"],
+    "description": "Weex Components"
+  },
+  "cell": {
+    "prefix": "cell",
+    "body": "<cell>$1</cell>",
+    "description": "Weex Components"
+  },
+  "recycle-list": {
+    "prefix": "recycle",
+    "body": [
+      "<recycle-list for=\"\">",
+      "  <cell-slot>",
+      "     $1",
+      "  <cell-slot>",
+      "</recycle-list>"
+    ],
+    "description": "Weex Components"
+  },
+  "loading": {
+    "prefix": "loading",
+    "body": "<loading>$1</loading>",
+    "description": "Weex Components"
+  },
+  "refresh": {
+    "prefix": "refresh",
+    "body": "<refresh>$1</refresh>",
+    "description": "Weex Components"
+  },
+  "scroller": {
+    "prefix": "scroller",
+    "body": "<scroller>$1</scroller>",
+    "description": "Weex Components"
+  },
+  "slider": {
+    "prefix": "slider",
+    "body": ["<slider auto-play=\"$1\">","   <indicator></indicator>", "</slider>"],
+    "description": "Weex Components"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": "<switch checked=\"$1\">$2</switch>",
+    "description": "Weex Components"
+  },
+  "text": {
+    "prefix": "text",
+    "body": "<text>$1</text>",
+    "description": "Weex Components"
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea",
+      "   type=\"$1\"",
+      "   autofocus=\"$2\"",
+      "   placeholder=\"$3\"",
+      "   value=\"$4\">",
+      "</textarea>"
+    ],
+    "description": "Weex Components"
+  },
+  "video": {
+    "prefix": "video",
+    "body": [
+      "<video",
+      "   src=\"$1\"",
+      "   play-status=\"$2\"",
+      "   auto-play=\"$3\">",
+      "</video>"
+    ],
+    "description": "Weex Components"
+  },
+  "waterfall": {
+    "prefix": "waterfall",
+    "body": [
+      "<waterfall",
+      "   show-scrollbar=\"$1\"",
+      "   column-width=\"$2\"",
+      "   column-count=\"$3\">",
+      "   <cell>$2</cell>",
+      "</waterfall>"
+    ],
+    "description": "Weex Components"
+  },
+  "web": {
+    "prefix": "web",
+    "body": "<web src=\"$1\">$2</web>",
+    "description": "weex - define web tag"
+  }
+}

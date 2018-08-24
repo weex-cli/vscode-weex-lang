@@ -29,7 +29,7 @@ export function getVueHTMLMode(
   let tagProviderSettings = getTagProviderSettings(workspacePath);
   let enabledTagProviders = getEnabledTagProviders(tagProviderSettings);
   const embeddedDocuments = getLanguageModelCache<TextDocument>(10, 60, document =>
-    documentRegions.get(document).getEmbeddedDocument('vue-html')
+    documentRegions.get(document).getEmbeddedDocument('weex-html')
   );
   const vueDocuments = getLanguageModelCache<HTMLDocument>(10, 60, document => parseHTMLDocument(document));
   const lintEngine = createLintEngine();
@@ -37,7 +37,7 @@ export function getVueHTMLMode(
 
   return {
     getId() {
-      return 'vue-html';
+      return 'weex-html';
     },
     configure(c) {
       tagProviderSettings = _.assign(tagProviderSettings, c.html.suggest);
@@ -70,7 +70,7 @@ export function getVueHTMLMode(
       return findDocumentSymbols(document, vueDocuments.get(document));
     },
     format(document: TextDocument, range: Range, formattingOptions: FormattingOptions) {
-      if (config.vetur.format.defaultFormatter.html === 'none') {
+      if (config.weexLang.format.defaultFormatter.html === 'none') {
         return [];
       }
       return htmlFormat(document, range, formattingOptions, config);

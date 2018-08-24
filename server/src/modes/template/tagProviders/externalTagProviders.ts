@@ -27,8 +27,8 @@ export const vuetifyTagProvider = getExternalTagProvider('vuetify', vuetifyTags,
 
 export function getQuasarTagProvider(workspacePath: string, pkg: any): IHTMLTagProvider | null {
   const base = 'node_modules/quasar-framework';
-  const tagsPath = ts.findConfigFile(workspacePath, ts.sys.fileExists, join(base, pkg.vetur.tags));
-  const attrsPath = ts.findConfigFile(workspacePath, ts.sys.fileExists, join(base, pkg.vetur.attributes));
+  const tagsPath = ts.findConfigFile(workspacePath, ts.sys.fileExists, join(base, pkg.weexLang.tags));
+  const attrsPath = ts.findConfigFile(workspacePath, ts.sys.fileExists, join(base, pkg.weexLang.attributes));
 
   return tagsPath && attrsPath
     ? getExternalTagProvider(

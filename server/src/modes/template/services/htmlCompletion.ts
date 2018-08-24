@@ -11,14 +11,16 @@ import {
 import { HTMLDocument } from '../parser/htmlParser';
 import { TokenType, createScanner, ScannerState } from '../parser/htmlScanner';
 import { IHTMLTagProvider } from '../tagProviders';
-import * as emmet from 'vscode-emmet-helper';
+// WEEX TODO
+// import * as emmet from 'vscode-emmet-helper';
 
 export function doComplete(
   document: TextDocument,
   position: Position,
   htmlDocument: HTMLDocument,
   tagProviders: IHTMLTagProvider[],
-  emmetConfig: emmet.EmmetConfiguration
+  // WEEX TODO
+  // emmetConfig: emmet.EmmetConfiguration
 ): CompletionList {
   const result: CompletionList = {
     isIncomplete: false,
@@ -276,9 +278,10 @@ export function doComplete(
         }
         break;
       case TokenType.Content:
-        if (offset <= scanner.getTokenEnd()) {
-          return emmet.doComplete(document, position, 'html', emmetConfig);
-        }
+        // WEEX TODO
+        // if (offset <= scanner.getTokenEnd()) {
+        //   return emmet.doComplete(document, position, 'html', emmetConfig);
+        // }
         break;
       default:
         if (offset <= scanner.getTokenEnd()) {

@@ -33,7 +33,7 @@ function genAttr(lang: string) {
 
 function getLangId(block: string, lang: string) {
   const mapping: { [block: string]: string } = {
-    template: 'vue-html',
+    template: 'weex-html',
     script: 'javascript',
     style: 'css'
   };

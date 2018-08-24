@@ -18,7 +18,7 @@ export function htmlFormat(
 
   const htmlFormattingOptions = _.assign(
     defaultHtmlOptions,
-    config.vetur.format.defaultFormatterOptions['js-beautify-html'],
+    config.weexLang.format.defaultFormatterOptions['js-beautify-html'],
     { end_with_newline: false }
   );
 
@@ -56,7 +56,7 @@ const defaultHtmlOptions: HTMLBeautifyOptions = {
   indent_size: 2, // Indentation size
   indent_with_tabs: false,
   max_preserve_newlines: 1, // Maximum number of line breaks to be preserved in one chunk (0 disables)
-  preserve_newlines: true, // Whether existing line breaks before elements should be preserved
+  preserve_newlines: true , // Whether existing line breaks before elements should be preserved
   unformatted: [
     'area',
     'base',

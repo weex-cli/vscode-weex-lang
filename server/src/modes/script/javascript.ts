@@ -112,7 +112,7 @@ export function getJavascriptMode(
         fileFsPath,
         offset,
         {
-          includeExternalModuleExports: _.get(config, ['vetur', 'completion', 'autoImport']),
+          includeExternalModuleExports: _.get(config, ['weexLang', 'completion', 'autoImport']),
           includeInsertTextCompletions: false
         }
       );
@@ -159,7 +159,7 @@ export function getJavascriptMode(
       if (details) {
         item.detail = ts.displayPartsToString(details.displayParts);
         item.documentation = ts.displayPartsToString(details.documentation);
-        if (details.codeActions && config.vetur.completion.autoImport) {
+        if (details.codeActions && config.weexLang.completion.autoImport) {
           const textEdits = convertCodeAction(doc, details.codeActions, regionStart);
           item.additionalTextEdits = textEdits;
         }
@@ -343,14 +343,14 @@ export function getJavascriptMode(
 
       const defaultFormatter =
         scriptDoc.languageId === 'javascript'
-          ? config.vetur.format.defaultFormatter.js
-          : config.vetur.format.defaultFormatter.ts;
+          ? config.weexLang.format.defaultFormatter.js
+          : config.weexLang.format.defaultFormatter.ts;
 
       if (defaultFormatter === 'none') {
         return [];
       }
 
-      const needIndent = config.vetur.format.scriptInitialIndent;
+      const needIndent = config.weexLang.format.scriptInitialIndent;
       const parser = scriptDoc.languageId === 'javascript' ? 'babylon' : 'typescript';
       if (defaultFormatter === 'prettier') {
         const code = scriptDoc.getText();

@@ -1,11 +1,12 @@
 {
-  "name": "vetur",
-  "displayName": "Vetur",
-  "description": "Vue tooling for VS Code",
-  "author": "Pine Wu <octref@gmail.com>",
-  "icon": "asset/vue.png",
-  "version": "0.12.6",
-  "publisher": "octref",
+  "name": "weex-lang",
+  "displayName": "weex-lang",
+  "description": "weex-language tooling for VS Code",
+  "author": "weex",
+  "icon": "asset/weex.png",
+  "version": "0.0.1",
+  "veturVersion": "0.12.6",
+  "publisher": "weex",
   "scripts": {
     "compile": "tsc -p . && tsc -p server",
     "watch": "run-p watch-client watch-server",
@@ -27,14 +28,9 @@
     ]
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/vuejs/vetur.git"
   },
   "keywords": [
-    "vetur",
-    "Vue",
-    "vue",
-    "vuejs"
+    "weex"
   ],
   "categories": [
     "Programming Languages"
@@ -47,27 +43,27 @@
     "vscode-languageserver-types": "^3.4.0"
   },
   "activationEvents": [
-    "onLanguage:vue"
+    "onLanguage:weex"
   ],
   "main": "./dist/client/vueMain",
   "contributes": {
     "commands": [
       {
-        "command": "vetur.generateGrammar",
-        "title": "Vetur: Generate grammar from `vetur.grammar.customBlocks`"
+        "command": "weexLang.generateGrammar",
+        "title": "weex: Generate grammar from `weexLang.grammar.customBlocks`"
       }
     ],
     "breakpoints": [
       {
-        "language": "vue"
+        "language": "weex"
       }
     ],
     "languages": [
       {
-        "id": "vue",
+        "id": "weex",
         "aliases": [
-          "Vue",
-          "vue"
+          "Weex",
+          "weex"
         ],
         "extensions": [
           ".vue"
@@ -75,9 +71,9 @@
         "configuration": "./languages/vue-language-configuration.json"
       },
       {
-        "id": "vue-html",
+        "id": "weex-html",
         "aliases": [
-          "Vue-html"
+          "Weex-html"
         ],
         "configuration": "./languages/vue-html-language-configuration.json"
       },
@@ -92,12 +88,12 @@
     ],
     "grammars": [
       {
-        "language": "vue",
+        "language": "weex",
         "scopeName": "source.vue",
         "path": "./syntaxes/vue-generated.json",
         "embeddedLanguages": {
           "text.html.basic": "html",
-          "text.html.vue-html": "vue-html",
+          "text.html.vue-html": "weex-html",
           "text.pug": "jade",
           "text.haml": "haml",
           "source.css": "css",
@@ -121,7 +117,7 @@
         "path": "./syntaxes/postcss.json"
       },
       {
-        "language": "vue-html",
+        "language": "weex-html",
         "scopeName": "text.html.vue-html",
         "path": "./syntaxes/vue-html.json",
         "embeddedLanguages": {
@@ -129,25 +125,31 @@
         }
       }
     ],
+    "snippets": [
+      {
+        "language": "weex-html",
+        "path": "./snippets/snippets.json"
+      }
+    ],
     "configuration": {
-      "title": "vetur configuration",
+      "title": "weex language configuration",
       "properties": {
-        "vetur.colorDecorators.enable": {
+        "weexLang.colorDecorators.enable": {
           "type": "boolean",
           "default": true,
           "description": "Use color decorators in vue"
         },
-        "vetur.completion.autoImport": {
+        "weexLang.completion.autoImport": {
           "type": "boolean",
           "default": true,
           "description": "Include completion for module export and auto import them"
         },
-        "vetur.completion.useScaffoldSnippets": {
+        "weexLang.completion.useScaffoldSnippets": {
           "type": "boolean",
           "default": true,
-          "description": "Enable/disable Vetur's built-in scaffolding snippets"
+          "description": "Enable/disable weexLang's built-in scaffolding snippets"
         },
-        "vetur.grammar.customBlocks": {
+        "weexLang.grammar.customBlocks": {
           "type": "object",
           "default": {
             "docs": "md",
@@ -155,22 +157,22 @@
           },
           "description": "Mapping from custom block tag name to language name. Used for generating grammar to support syntax highlighting for custom blocks."
         },
-        "vetur.validation.template": {
+        "weexLang.validation.template": {
           "type": "boolean",
           "default": true,
           "description": "Validate vue-html in <template> using eslint-plugin-vue"
         },
-        "vetur.validation.style": {
+        "weexLang.validation.style": {
           "type": "boolean",
           "default": true,
           "description": "Validate css/scss/less/postcss in <style>"
         },
-        "vetur.validation.script": {
+        "weexLang.validation.script": {
           "type": "boolean",
           "default": true,
           "description": "Validate js/ts in <script>"
         },
-        "vetur.format.defaultFormatter.html": {
+        "weexLang.format.defaultFormatter.html": {
           "type": "string",
           "default": "none",
           "enum": [
@@ -183,7 +185,7 @@
           ],
           "description": "Default formatter for <template> region"
         },
-        "vetur.format.defaultFormatter.css": {
+        "weexLang.format.defaultFormatter.css": {
           "type": "string",
           "default": "prettier",
           "enum": [
@@ -196,7 +198,7 @@
           ],
           "description": "Default formatter for <style> region"
         },
-        "vetur.format.defaultFormatter.postcss": {
+        "weexLang.format.defaultFormatter.postcss": {
           "type": "string",
           "default": "prettier",
           "enum": [
@@ -209,7 +211,7 @@
           ],
           "description": "Default formatter for <style lang='postcss'> region"
         },
-        "vetur.format.defaultFormatter.scss": {
+        "weexLang.format.defaultFormatter.scss": {
           "type": "string",
           "default": "prettier",
           "enum": [
@@ -222,7 +224,7 @@
           ],
           "description": "Default formatter for <style lang='scss'> region"
         },
-        "vetur.format.defaultFormatter.less": {
+        "weexLang.format.defaultFormatter.less": {
           "type": "string",
           "default": "prettier",
           "enum": [
@@ -235,7 +237,7 @@
           ],
           "description": "Default formatter for <style lang='less'> region"
         },
-        "vetur.format.defaultFormatter.stylus": {
+        "weexLang.format.defaultFormatter.stylus": {
           "type": "string",
           "default": "stylus-supremacy",
           "enum": [
@@ -248,7 +250,7 @@
           ],
           "description": "Default formatter for <style lang='stylus'> region"
         },
-        "vetur.format.defaultFormatter.js": {
+        "weexLang.format.defaultFormatter.js": {
           "type": "string",
           "default": "prettier",
           "enum": [
@@ -263,7 +265,7 @@
           ],
           "description": "Default formatter for <script> region"
         },
-        "vetur.format.defaultFormatter.ts": {
+        "weexLang.format.defaultFormatter.ts": {
           "type": "string",
           "default": "prettier",
           "enum": [
@@ -278,24 +280,24 @@
           ],
           "description": "Default formatter for <script> region"
         },
-        "vetur.format.defaultFormatterOptions": {
+        "weexLang.format.defaultFormatterOptions": {
           "type": "object",
           "default": {
             "js-beautify-html": {}
           },
           "description": "Options for all default formatters"
         },
-        "vetur.format.styleInitialIndent": {
+        "weexLang.format.styleInitialIndent": {
           "type": "boolean",
           "default": false,
           "description": "Whether to have initial indent for <style> region"
         },
-        "vetur.format.scriptInitialIndent": {
+        "weexLang.format.scriptInitialIndent": {
           "type": "boolean",
           "default": false,
           "description": "Whether to have initial indent for <script> region"
         },
-        "vetur.trace.server": {
+        "weexLang.trace.server": {
           "type": "string",
           "enum": [
             "off",

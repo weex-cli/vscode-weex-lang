@@ -48,7 +48,7 @@ export class VLS {
   private pendingValidationRequests: { [uri: string]: NodeJS.Timer } = {};
   private validationDelayMs = 200;
   private validation: { [k: string]: boolean } = {
-    'vue-html': true,
+    'weex-html': true,
     html: true,
     css: true,
     scss: true,
@@ -120,8 +120,8 @@ export class VLS {
   }
 
   configure(config: any): void {
-    const veturValidationOptions = config.vetur.validation;
-    this.validation['vue-html'] = veturValidationOptions.template;
+    const veturValidationOptions = config.weexLang.validation;
+    this.validation['weex-html'] = veturValidationOptions.template;
     this.validation.css = veturValidationOptions.style;
     this.validation.postcss = veturValidationOptions.style;
     this.validation.scss = veturValidationOptions.style;
@@ -157,7 +157,7 @@ export class VLS {
 
   doValidate(doc: TextDocument): Diagnostic[] {
     const diagnostics: Diagnostic[] = [];
-    if (doc.languageId === 'vue') {
+    if (doc.languageId === 'weex') {
       this.languageModes.getAllModesInDocument(doc).forEach(mode => {
         if (mode.doValidation && this.validation[mode.getId()]) {
           pushAll(diagnostics, mode.doValidation(doc));

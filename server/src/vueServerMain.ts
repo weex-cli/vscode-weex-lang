@@ -22,13 +22,13 @@ connection.onInitialize((params: InitializeParams): InitializeResult => {
 
   const workspacePath = params.rootPath;
   if (!workspacePath) {
-    console.error('No workspace path found. Vetur initialization failed');
+    console.error('No workspace path found. weexLang initialization failed');
     return {
       capabilities: { }
     };
   }
 
-  console.log('Vetur initialized');
+  console.log('weexLang initialized');
   const vls = new VLS(workspacePath, connection);
 
   if (initializationOptions) {

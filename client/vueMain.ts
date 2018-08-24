@@ -15,33 +15,34 @@ import {
   DocumentColorRequest, DocumentColorParams, ColorPresentationRequest, ColorPresentationParams
 } from 'vscode-languageserver-protocol/lib/protocol.colorProvider.proposed';
 
-const EMPTY_ELEMENTS: string[] = [
-  'area',
-  'base',
-  'br',
-  'col',
-  'embed',
-  'hr',
-  'img',
-  'input',
-  'keygen',
-  'link',
-  'menuitem',
-  'meta',
-  'param',
-  'source',
-  'track',
-  'wbr'
-];
+// WEEX TODO
+// const EMPTY_ELEMENTS: string[] = [
+//   'area',
+//   'base',
+//   'br',
+//   'col',
+//   'embed',
+//   'hr',
+//   'img',
+//   'input',
+//   'keygen',
+//   'link',
+//   'menuitem',
+//   'meta',
+//   'param',
+//   'source',
+//   'track',
+//   'wbr'
+// ];
 
 export function activate(context: ExtensionContext) {
   /**
    * Custom Block Grammar generation command
    */
   context.subscriptions.push(
-    vscode.commands.registerCommand('vetur.generateGrammar', () => {
+    vscode.commands.registerCommand('weexLang.generateGrammar', () => {
       const customBlocks: { [k: string]: string } =
-        workspace.getConfiguration().get('vetur.grammar.customBlocks') || {};
+        workspace.getConfiguration().get('weexLang.grammar.customBlocks') || {};
       try {
         const generatedGrammar = getGeneratedGrammar(
           path.resolve(context.extensionPath, 'syntaxes/vue.json'),
@@ -51,7 +52,7 @@ export function activate(context: ExtensionContext) {
         vscode.window.showInformationMessage('Successfully generated vue grammar. Reload VS Code to enable it.');
       } catch (e) {
         vscode.window.showErrorMessage(
-          'Failed to generate vue grammar. `vetur.grammar.customBlocks` contain invalid language values'
+          'Failed to generate vue grammar. `weexLang.grammar.customBlocks` contain invalid language values'
         );
       }
     })
@@ -68,13 +69,13 @@ export function activate(context: ExtensionContext) {
     debug: { module: serverModule, transport: TransportKind.ipc, options: debugOptions }
   };
 
-  const documentSelector = ['vue'];
+  const documentSelector = ['weex'];
   const config = workspace.getConfiguration();
 
   const clientOptions: LanguageClientOptions = {
     documentSelector,
     synchronize: {
-      configurationSection: ['vetur', 'emmet', 'html', 'javascript', 'typescript', 'prettier', 'stylusSupremacy'],
+      configurationSection: ['weexLang', 'emmet', 'html', 'javascript', 'typescript', 'prettier', 'stylusSupremacy'],
       fileEvents: vscode.workspace.createFileSystemWatcher('{**/*.js,**/*.ts}', true, false, true)
     },
     initializationOptions: {
@@ -83,27 +84,28 @@ export function activate(context: ExtensionContext) {
     revealOutputChannelOn: RevealOutputChannelOn.Never
   };
 
-  const client = new LanguageClient('vetur', 'Vue Language Server', serverOptions, clientOptions);
+  const client = new LanguageClient('weexLang', 'weex Language Server', serverOptions, clientOptions);
   const disposable = client.start();
   context.subscriptions.push(disposable);
-  const isDecoratorEnabled = workspace.getConfiguration().get<boolean>('vetur.colorDecorators.enable');
+  const isDecoratorEnabled = workspace.getConfiguration().get<boolean>('weexLang.colorDecorators.enable');
 
   if (isDecoratorEnabled) {
     client.onReady().then(registerColorProvider);
   }
 
-  languages.setLanguageConfiguration('vue-html', {
+  languages.setLanguageConfiguration('weex-html', {
     wordPattern: /(-?\d*\.\d\w*)|([^\`\~\!\@\$\^\&\*\(\)\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s]+)/g,
     onEnterRules: [
-      {
-        beforeText: new RegExp(`<(?!(?:${EMPTY_ELEMENTS.join('|')}))([_:\\w][_:\\w-.\\d]*)([^/>]*(?!/)>)[^<]*$`, 'i'),
-        afterText: /^<\/([_:\w][_:\w-.\d]*)\s*>$/i,
-        action: { indentAction: IndentAction.IndentOutdent }
-      },
-      {
-        beforeText: new RegExp(`<(?!(?:${EMPTY_ELEMENTS.join('|')}))(\\w[\\w\\d]*)([^/>]*(?!/)>)[^<]*$`, 'i'),
-        action: { indentAction: IndentAction.Indent }
-      }
+      // WEEX TODO
+      // {
+      // beforeText: new RegExp(`<(?!(?:${EMPTY_ELEMENTS.join('|')}))([_:\\w][_:\\w-.\\d]*)([^/>]*(?!/)>)[^<]*$`, 'i'),
+      //   afterText: /^<\/([_:\w][_:\w-.\d]*)\s*>$/i,
+      //   action: { indentAction: IndentAction.IndentOutdent }
+      // },
+      // {
+      //   beforeText: new RegExp(`<(?!(?:${EMPTY_ELEMENTS.join('|')}))(\\w[\\w\\d]*)([^/>]*(?!/)>)[^<]*$`, 'i'),
+      //   action: { indentAction: IndentAction.Indent }
+      // }
     ]
   });
 

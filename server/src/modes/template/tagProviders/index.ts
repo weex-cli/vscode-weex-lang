@@ -79,7 +79,7 @@ export function getTagProviderSettings(workspacePath: string | null | undefined)
     );
     if (quasarPath) {
       const quasarPkg = JSON.parse(fs.readFileSync(quasarPath, 'utf-8'));
-      if (quasarPkg.vetur) {
+      if (quasarPkg.weexLang) {
         const provider = getQuasarTagProvider(workspacePath, quasarPkg);
         if (provider !== null) {
           allTagProviders.push(provider);

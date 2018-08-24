@@ -21,7 +21,7 @@ export function getStylusMode(documentRegions: LanguageModelCache<VueDocumentReg
   return {
     getId: () => 'stylus',
     configure(c) {
-      baseIndentShifted = _.get(c, 'vetur.format.styleInitialIndent', false);
+      baseIndentShifted = _.get(c, 'weexLang.format.styleInitialIndent', false);
       config = c;
     },
     onDocumentRemoved() {},
@@ -62,7 +62,7 @@ export function getStylusMode(documentRegions: LanguageModelCache<VueDocumentReg
       return stylusHover(embedded, position);
     },
     format(document, range, formatParams) {
-      if (config.vetur.format.defaultFormatter.stylus === 'none') {
+      if (config.weexLang.format.defaultFormatter.stylus === 'none') {
         return [];
       }
 
@@ -83,7 +83,7 @@ export function getStylusMode(documentRegions: LanguageModelCache<VueDocumentReg
         }
       }
 
-      // Add one more indentation when `vetur.format.styleInitialIndent` is set to `true`
+      // Add one more indentation when `weexLang.format.styleInitialIndent` is set to `true`
       if (baseIndentShifted) {
         baseIndent += tabStopChar;
       }
