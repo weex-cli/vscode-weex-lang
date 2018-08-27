@@ -12,7 +12,7 @@ import { findDocumentLinks } from './services/htmlLinks';
 import { findDocumentSymbols } from './services/htmlSymbolsProvider';
 import { htmlFormat } from './services/htmlFormat';
 import { parseHTMLDocument } from './parser/htmlParser';
-import { doValidation, createLintEngine } from './services/htmlValidation';
+// import { doValidation, createLintEngine } from '../../services/vueValidation';
 import { findDefinition } from './services/htmlDefinition';
 import { getTagProviderSettings } from './tagProviders';
 import { ScriptMode } from '../script/javascript';
@@ -32,7 +32,7 @@ export function getVueHTMLMode(
     documentRegions.get(document).getEmbeddedDocument('weex-html')
   );
   const vueDocuments = getLanguageModelCache<HTMLDocument>(10, 60, document => parseHTMLDocument(document));
-  const lintEngine = createLintEngine();
+  // const lintEngine = createLintEngine();
   let config: any = {};
 
   return {
@@ -45,14 +45,15 @@ export function getVueHTMLMode(
       config = c;
     },
     doValidation(document) {
-      const embedded = embeddedDocuments.get(document);
-      return doValidation(embedded, lintEngine);
+      // const embedded = embeddedDocuments.get(document);
+      // return doValidation(embedded, lintEngine);
+      return [];
     },
     doComplete(document: TextDocument, position: Position) {
       const embedded = embeddedDocuments.get(document);
       const components = scriptMode.findComponents(document);
       const tagProviders = enabledTagProviders.concat(getComponentTags(components));
-      return doComplete(embedded, position, vueDocuments.get(embedded), tagProviders, config.emmet);
+      return doComplete(embedded, position, vueDocuments.get(embedded), tagProviders);
     },
     doHover(document: TextDocument, position: Position) {
       const embedded = embeddedDocuments.get(document);

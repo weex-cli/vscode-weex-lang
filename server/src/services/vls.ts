@@ -39,6 +39,8 @@ import { getLanguageModes, LanguageModes } from '../modes/languageModes';
 import { NULL_HOVER, NULL_COMPLETION, NULL_SIGNATURE } from '../modes/nullMode';
 import { DocumentService } from './document';
 import { DocumentContext } from '../types';
+import { doValidation, createLintEngine } from './vueValidation';
+
 
 export class VLS {
   private documentService: DocumentService;
@@ -57,6 +59,8 @@ export class VLS {
     javascript: true
   };
 
+  private lintEngine: any;
+
   constructor(private workspacePath: string, private lspConnection: IConnection) {
     this.languageModes = getLanguageModes(workspacePath);
 
@@ -66,6 +70,8 @@ export class VLS {
     this.setupConfigListeners();
     this.setupLanguageFeatures();
     this.setupFileChangeListeners();
+
+    this.lintEngine = createLintEngine();
 
     this.lspConnection.onShutdown(() => {
       this.dispose();
@@ -163,6 +169,7 @@ export class VLS {
           pushAll(diagnostics, mode.doValidation(doc));
         }
       });
+      pushAll(diagnostics, doValidation(doc, this.lintEngine));
     }
     return diagnostics;
   }

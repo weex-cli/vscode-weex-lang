@@ -56,7 +56,6 @@ function getStyleMode(
       config = c;
     },
     doValidation(document) {
-      console.log('languageId', languageId);
       if (languageId === 'postcss') {
         return [];
       } else {

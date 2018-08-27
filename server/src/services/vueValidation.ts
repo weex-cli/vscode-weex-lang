@@ -16,7 +16,6 @@ function toDiagnostic(error: ESLintError): Diagnostic {
 }
 
 export function doValidation(document: TextDocument, engine: CLIEngine): Diagnostic[] {
-  console.log('doValidation');
   const rawText = document.getText();
   // skip checking on empty template
   if (rawText.replace(/\s/g, '') === '') {
@@ -26,14 +25,10 @@ export function doValidation(document: TextDocument, engine: CLIEngine): Diagnos
   const text = rawText;
   const report = engine.executeOnText(text, document.uri);
 
-  console.log(JSON.stringify(report));
-  console.log(text);
-
   return report.results[0] ? report.results[0].messages.map(toDiagnostic) : [];
 }
 
 export function createLintEngine() {
-  console.log('CLIEngine');
   return new CLIEngine({
     useEslintrc: false,
     ...configs.base,

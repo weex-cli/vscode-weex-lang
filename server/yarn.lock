@@ -870,9 +870,9 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-plugin-weex@^4.0.0:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-weex/-/eslint-plugin-weex-1.0.14.tgz#c9f69ea349429f5e619ff098a2e3a1dfd584d499"
+eslint-plugin-weex@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-weex/-/eslint-plugin-weex-1.0.15.tgz#b5c58221bb8c8693d3da6e3d8c6380693045c551"
   dependencies:
     css-tree "^1.0.0-alpha.28"
     vue-eslint-parser "^2.0.3"

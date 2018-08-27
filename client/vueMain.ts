@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import * as vscode from 'vscode';
-import { languages, workspace, ExtensionContext, IndentAction } from 'vscode';
+import { languages, workspace, ExtensionContext } from 'vscode';
 import {
   LanguageClient,
   LanguageClientOptions,
@@ -62,7 +62,7 @@ export function activate(context: ExtensionContext) {
    * Vue Language Server Initialization
    */
   const serverModule = context.asAbsolutePath(path.join('server', 'dist', 'vueServerMain.js'));
-  const debugOptions = { execArgv: ['--nolazy', '--inspect=6005'] };
+  const debugOptions = { execArgv: ['--nolazy', '--inspect=6105'] };
 
   const serverOptions: ServerOptions = {
     run: { module: serverModule, transport: TransportKind.ipc },

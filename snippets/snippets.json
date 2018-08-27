@@ -1,4 +1,13 @@
 {
+  "template": {
+    "prefix": "temp",
+    "body":  [
+      "<template>",
+      "   $1",
+      "</template>"
+    ],
+    "description": "Template tag"
+  },
   "a": {
     "prefix": "a",
     "body": "<a href=\"$1\">$2</a>",

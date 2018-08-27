@@ -4,7 +4,7 @@
   "description": "weex-language tooling for VS Code",
   "author": "weex",
   "icon": "asset/weex.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "veturVersion": "0.12.6",
   "publisher": "weex",
   "scripts": {
@@ -28,6 +28,8 @@
     ]
   },
   "repository": {
+    "type": "git",
+    "url": "https://github.com/weex-cli/vscode-weex-lang"
   },
   "keywords": [
     "weex"
@@ -36,7 +38,7 @@
     "Programming Languages"
   ],
   "engines": {
-    "vscode": "^1.25.0"
+    "vscode": "^1.23.0"
   },
   "dependencies": {
     "vscode-languageclient": "^3.4.2",

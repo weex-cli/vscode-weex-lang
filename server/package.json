@@ -25,7 +25,7 @@
     "buefy-helper-json": "^1.0.2",
     "element-helper-json": "^2.0.2",
     "eslint": "^4.13.1",
-    "eslint-plugin-weex": "^4.0.0",
+    "eslint-plugin-weex": "^1.0.15",
     "js-beautify": "^1.7.5",
     "lodash": "^4.17.4",
     "parse-gitignore": "^0.4.0",

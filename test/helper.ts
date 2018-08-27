@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
 
-export const EXT_IDENTIFIER = 'weex-language';
+export const EXT_IDENTIFIER = 'weex.weex-lang';
 export const FILE_LOAD_SLEEP_TIME = 1500;
 
 export const ext = vscode.extensions.getExtension(EXT_IDENTIFIER);
@@ -14,8 +14,6 @@ export async function activateLS() {
   try {
     await ext!.activate();
   } catch (err) {
-    console.error(err);
-    console.log(`Failed to activate ${EXT_IDENTIFIER}`);
     process.exit(1);
   }
 }
