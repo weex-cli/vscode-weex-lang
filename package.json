@@ -4,7 +4,7 @@
   "description": "weex-language tooling for VS Code",
   "author": "weex",
   "icon": "asset/weex.png",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "veturVersion": "0.12.6",
   "publisher": "weex",
   "scripts": {
