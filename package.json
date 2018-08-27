@@ -4,7 +4,7 @@
   "description": "weex-language tooling for VS Code",
   "author": "weex",
   "icon": "asset/weex.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "veturVersion": "0.12.6",
   "publisher": "weex",
   "scripts": {
@@ -98,7 +98,7 @@
     "grammars": [
       {
         "language": "weex",
-        "scopeName": "source.vue",
+        "scopeName": "source.weex",
         "path": "./syntaxes/vue-generated.json",
         "embeddedLanguages": {
           "text.html.basic": "html",
@@ -129,7 +129,7 @@
       },
       {
         "language": "weex-html",
-        "scopeName": "text.html.vue-html",
+        "scopeName": "text.html.weex-html",
         "path": "./syntaxes/vue-html.json",
         "embeddedLanguages": {
           "source.js": "javascript"

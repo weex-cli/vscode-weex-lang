@@ -1089,5 +1089,5 @@
     "vue"
   ],
   "name": "Vue Component",
-  "scopeName": "source.vue"
+  "scopeName": "source.weex"
 }
