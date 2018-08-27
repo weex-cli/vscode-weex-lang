@@ -80,6 +80,13 @@
         "configuration": "./languages/vue-html-language-configuration.json"
       },
       {
+        "id": "weex-js",
+        "aliases": [
+          "weex-js"
+        ],
+        "configuration": "./languages/vue-js-language-configuration.json"
+      },
+      {
         "id": "postcss",
         "aliases": [
           "PostCSS",
@@ -104,8 +111,10 @@
           "source.css.postcss": "postcss",
           "source.sass": "sass",
           "source.stylus": "stylus",
-          "source.js": "javascript",
-          "source.ts": "typescript",
+          "source.js.base": "javascript",
+          "source.js": "weex-js",
+          "source.ts.base": "typescript",
+          "source.ts": "weex-js",
           "source.coffee": "coffeescript",
           "text.html.markdown": "md",
           "source.yaml": "yaml",
@@ -130,7 +139,11 @@
     "snippets": [
       {
         "language": "weex-html",
-        "path": "./snippets/snippets.json"
+        "path": "./snippets/weex-html-snippets.json"
+      },
+      {
+        "language": "weex-js",
+        "path": "./snippets/weex-js-snippets.json"
       }
     ],
     "configuration": {

@@ -1,0 +1,37 @@
+{
+  "weex.requireModule": {
+    "prefix": "weex.requireModule",
+    "body": "weex.requireModule('$1')",
+    "description": "Require Weex Modules"
+  },
+  "requireModule": {
+    "prefix": "requireModule",
+    "body": "weex.requireModule('$1')",
+    "description": "Require Weex Modules"
+  },
+  "weex.config": {
+    "prefix": "weex.config",
+    "body": "weex.config",
+    "description": "Weex configs"
+  },
+  "weex.document": {
+    "prefix": "weex.document",
+    "body": "weex.document",
+    "description": "DOM for the current page"
+  },
+  "weex.supports": {
+    "prefix": "weex.supports",
+    "body": "weex.supports('$1')",
+    "description": "To detect whether a feature is supported in the current environment at runtime (v0.15+)"
+  },
+  "weex.isRegisteredModule": {
+    "prefix": "weex.isRegisteredModule",
+    "body": "weex.isRegisteredModule('$1')",
+    "description": "Detect whether the specific module or method is registered"
+  },
+  "weex.isRegisteredComponent": {
+    "prefix": "weex.isRegisteredComponent",
+    "body": "weex.isRegisteredComponent('$1')",
+    "description": "Detect whether the specific component is registered"
+  }
+}
