@@ -133,6 +133,7 @@ export class VLS {
     this.validation.scss = veturValidationOptions.style;
     this.validation.less = veturValidationOptions.style;
     this.validation.javascript = veturValidationOptions.script;
+    this.validation.vue = veturValidationOptions.vue;
 
     this.languageModes.getAllModes().forEach(m => {
       if (m.configure) {
@@ -169,7 +170,9 @@ export class VLS {
           pushAll(diagnostics, mode.doValidation(doc));
         }
       });
-      pushAll(diagnostics, doValidation(doc, this.lintEngine));
+      if (this.validation.vue && this.lintEngine) {
+        pushAll(diagnostics, doValidation(doc, this.lintEngine));
+      }
     }
     return diagnostics;
   }

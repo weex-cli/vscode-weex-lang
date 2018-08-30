@@ -4,7 +4,7 @@
   "description": "weex-language tooling for VS Code",
   "author": "weex",
   "icon": "asset/weex.png",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "veturVersion": "0.12.6",
   "publisher": "weex",
   "scripts": {
@@ -175,7 +175,7 @@
         "weexLang.validation.template": {
           "type": "boolean",
           "default": true,
-          "description": "Validate vue-html in <template> using eslint-plugin-vue"
+          "description": "For weex language this do nothing, replace by `weexLang.validation.vue`"
         },
         "weexLang.validation.style": {
           "type": "boolean",
@@ -186,6 +186,11 @@
           "type": "boolean",
           "default": true,
           "description": "Validate js/ts in <script>"
+        },
+        "weexLang.validation.vue": {
+          "type": "boolean",
+          "default": true,
+          "description": "Validate vue file content use eslint-plugin-weex"
         },
         "weexLang.format.defaultFormatter.html": {
           "type": "string",
