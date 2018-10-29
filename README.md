@@ -16,7 +16,7 @@
 }
 ```
 
-## FAQ
+## Issues
 
 https://github.com/weex-cli/vscode-weex-lang/issues
 
