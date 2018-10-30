@@ -16,6 +16,17 @@
 }
 ```
 
+### Note
+
+* You can disable `Eslint-plugin-weex` see [here](`https://github.com/weex-cli/vscode-weex-lang/issues/1`).
+* If you have vue project use `vetur`, you can set `files.associations` or temporarily disable `weex-lang`.
+
+```
+"files.associations": {
+  "*.vue": "vue",
+}
+```
+
 ## Issues
 
 https://github.com/weex-cli/vscode-weex-lang/issues
