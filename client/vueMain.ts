@@ -14,6 +14,7 @@ import { getGeneratedGrammar } from './grammar';
 import {
   DocumentColorRequest, DocumentColorParams, ColorPresentationRequest, ColorPresentationParams
 } from 'vscode-languageserver-protocol/lib/protocol.colorProvider.proposed';
+import { sendLog } from './sendLog';
 
 // WEEX TODO
 // const EMPTY_ELEMENTS: string[] = [
@@ -36,6 +37,7 @@ import {
 // ];
 
 export function activate(context: ExtensionContext) {
+  sendLog();
   /**
    * Custom Block Grammar generation command
    */
