@@ -102,7 +102,7 @@
         "path": "./syntaxes/vue-generated.json",
         "embeddedLanguages": {
           "text.html.basic": "html",
-          "text.html.vue-html": "weex-html",
+          "text.html.weex-html": "weex-html",
           "text.pug": "jade",
           "text.haml": "haml",
           "source.css": "css",
