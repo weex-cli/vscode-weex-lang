@@ -111,10 +111,8 @@
           "source.css.postcss": "postcss",
           "source.sass": "sass",
           "source.stylus": "stylus",
-          "source.js.base": "javascript",
           "source.js": "weex-js",
-          "source.ts.base": "typescript",
-          "source.ts": "weex-js",
+          "source.ts": "typescript",
           "source.coffee": "coffeescript",
           "text.html.markdown": "md",
           "source.yaml": "yaml",
@@ -134,6 +132,11 @@
         "embeddedLanguages": {
           "source.js": "javascript"
         }
+      },
+       {
+        "language": "weex-js",
+        "scopeName": "source.js.weex-js",
+        "path": "./syntaxes/vue-js.json"
       }
     ],
     "snippets": [
