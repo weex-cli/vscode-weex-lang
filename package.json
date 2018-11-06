@@ -4,7 +4,7 @@
   "description": "weex-language tooling for VS Code",
   "author": "weex",
   "icon": "asset/weex.png",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "veturVersion": "0.12.6",
   "publisher": "weex",
   "scripts": {
@@ -133,7 +133,7 @@
           "source.js": "javascript"
         }
       },
-       {
+      {
         "language": "weex-js",
         "scopeName": "source.js.weex-js",
         "path": "./syntaxes/vue-js.json"
