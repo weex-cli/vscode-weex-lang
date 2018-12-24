@@ -1023,10 +1023,10 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-plugin-weex@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-weex/-/eslint-plugin-weex-1.1.4.tgz#556ebbf4e6442eb8f9778cb2ed40031c3ea8ccb4"
-  integrity sha512-y+HNKZJ6xt6OU2kL1fHDE3VLQ/8wYW7LcyLB2KJZSVJeVqlEs1inJ7xFpUqSRliKXDSWhZvhjFxt2ZfKEmrbMw==
+eslint-plugin-weex@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-weex/-/eslint-plugin-weex-1.1.8.tgz#bfcd5a22b44b195bfcf41dfe8bd7225deb91de22"
+  integrity sha512-emX7kiFX2gAGy6RixuWsuaaimWgyZ8dghErauPe6qhAc/pduyFoiaV2KGQY+b4sNHQGwzKlIpsr1kbnh7V263Q==
   dependencies:
     css-tree "^1.0.0-alpha.28"
     vue-eslint-parser "^2.0.3"
